@@ -1,0 +1,66 @@
+# wb_to_unmd.dat
+#
+# A manually transcribed partial mapping of World Bank 3-letter country
+# abbreviations to UN Mortality Database country codes. I deliberately
+# transcribed only countries which (according to World Bank data) had
+# positive GDP growth in 2008 & 2009; this list narrows down the set of
+# possible control countries to only those where the Great Financial Crisis
+# didn't shrink the economy (on a per capita basis).
+WBABBR	UNMDCC
+"AFG"	3010
+"ALB"	4005
+"AZE"	4012
+"BGD"	3025
+"BLR"	4018
+"BTN"	3027
+"BOL"	2060
+"CHN"	3068
+"COL"	2130
+"CIV"	1115
+"CUB"	2150
+"DJI"	1120
+"ETH"	1140
+"GHA"	1180
+"GUM"	NA
+"GNB"	1192
+"GUY"	2260
+"IND"	3100
+"IDN"	3110
+"IRQ"	3140
+"IMN"	NA
+"JOR"	3170
+"KGZ"	4184
+"LAO"	3200
+"LBN"	3210
+"LSO"	1230
+"LBR"	1240
+"MWI"	1270
+"MLI"	1280
+"MUS"	1300
+"MAR"	1310
+"MOZ"	1320
+"MMR"	3270
+"NRU"	5110
+"NPL"	3280
+"NGA"	1340
+"OMN"	3285
+"PNG"	5195
+"POL"	4230
+"RWA"	1370
+"STP"	1385
+"SLE"	1410
+"LKA"	3365
+"SDN"	1465
+"SUR"	2430
+"SWZ"	1480
+"TJK"	4301
+"TZA"	1546
+"TLS"	NA
+"TON"	5200
+"TUN"	1520
+"TKM"	4302
+"UGA"	2460
+"UZB"	4335
+"VUT"	5207
+"VNM"	3408
+"ZMB"	1560
