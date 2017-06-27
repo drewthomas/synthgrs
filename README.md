@@ -1,7 +1,7 @@
 synthgrs
 ========
 
-# Context
+## Context
 
 A little unfinished project, which will very likely remain unfinishable, researching Great Recession suicides. It's inspired by the paper
 
@@ -19,7 +19,7 @@ Unfortunately, in practice only about a third of countries had increasing GDP pe
 Only two countries, in fact: Albania and Kyrgyzstan.
 And they're not enough for a control group.
 
-# Output
+## Output
 
 Still, maybe this project isn't a complete waste of time.
 It produced a convenient table of suicide rates, available in this repository as `suic_rates.dat`.
@@ -39,7 +39,9 @@ A quick explanation of `suic_rates.dat`'s columns:
 * `AASR`: age-adjusted suicide rate, i.e. suicides per 100,000 people in the given country-year-sex combination, reweighting the age-specific suicide rates so the overall age distribution matches a reference population (currently the Netherlands in the given year).
 * `SAAASR`: sex-adjusted, age-adjusted suicide rate, i.e. suicides per 100,000 people in the given country-year combination, reweighting the AASRs by sex to match a reference population's sex distribution (again that of the Netherlands in the given year).
 
-# Replication
+`plots.pdf` offers a more attractive presentation of the summary suicide rates, consisting of a line plot of sex-and-age-adjusted suicide rates over time for each country in the dataset, and scatterplots of suicide rates broken down further by sex.
+
+## Replication
 
 To check my work from scratch, you'll need the raw data files with which I started.
 As GDP data I used the 31 May 2017 version of the World Bank's [World Development Indicators](http://data.worldbank.org/data-catalog/world-development-indicators), and the WHO MD files I used are
