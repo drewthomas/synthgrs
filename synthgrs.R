@@ -39,7 +39,7 @@ extract_wb_var <- function(df, ind_code)
 	return(out)
 }
 
-# Extract PPP GDP (`PG`) and growth therein (`PGG`) into the tidy data
+# Extract PPP GDP (`PG`) and growth thereof (`PGG`) into the tidy data
 # frame `gdp`.
 cat("Extracting national PPP GDP time series...")
 gdp <- extract_wb_var(wb_gdp, "NY.GDP.PCAP.KD.ZG")
@@ -58,9 +58,9 @@ gdp_rr <- gdp[gdp$ABBR %in% gdp$ABBR[(gdp$YR == 2008) & (gdp$PGG > 0)],]
 gdp_rr <- gdp_rr[gdp_rr$ABBR
                  %in% gdp_rr$ABBR[(gdp_rr$YR == 2009) & (gdp_rr$PGG > 0)],]
 
-# Now read in the tidy tables of country-year-sex age-adjusted suicide rates
-# and WHO Mortality Database country codes. Splice the country codes into
-# the suicide-rate table `sr`.
+# Now read in the semi-tidy tables of country-year-sex age-adjusted suicide
+# rates and WHO Mortality Database country codes. Splice the country codes
+# into the suicide-rate table `sr`.
 sr <- read.table("suic_rates.dat", header=TRUE)
 cc <- read.csv("country_codes.csv", header=TRUE)
 sr <- merge(sr, cc, by.x="Country", by.y="country", all.x=TRUE)

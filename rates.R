@@ -220,6 +220,8 @@ compute_suicide_rates <- function(d)
 	}
 
 	# Compute age-adjusted suicide rates by sex.
+	# Note the `0.0` in `age_adjust`: this is my assumption that there are
+	# always 0 suicides among infants (people of age 0).
 	cat("Computing age-adjusted suicide rates by sex...")
 	for (yr in unique(d$Year)) {
 		for (sex in 1:2) {

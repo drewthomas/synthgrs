@@ -8,7 +8,8 @@ plots.pdf: country_codes.csv suic_rates.dat wb_gdp.csv wb_to_unmd.dat synthgrs.R
 	mv Rplots.pdf plots.pdf
 
 # Use the R script `rates.R` to process the raw WHO Mortality Database CSV
-# files and produce the tidy table of suicide rates `suic_rates.dat`.
+# files and produce the immediately useable table of suicide rates
+# `suic_rates.dat`.
 suic_rates.dat: Morticd10_part1.csv Morticd10_part2.csv Morticd9.csv pop.csv rates.R
 	R -q --vanilla < rates.R
 
