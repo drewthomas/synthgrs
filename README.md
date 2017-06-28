@@ -1,9 +1,11 @@
 synthgrs
 ========
 
+A little unfinished project, which will very likely remain unfinishable, researching Great Recession suicides.
+
 ## Context
 
-A little unfinished project, which will very likely remain unfinishable, researching Great Recession suicides. It's inspired by the paper
+It's inspired by the paper
 
 * Aaron Reeves, Martin McKee, David Stuckler. [Economic suicides in the Great Recession in Europe and North America](http://bjp.rcpsych.org/content/205/3/246), *The British Journal of Psychiatry*, **205**(3), 246&ndash;247
 
@@ -24,7 +26,7 @@ And they're not enough for a control group.
 Still, maybe this project isn't a complete waste of time.
 It produced a convenient table of suicide rates, available in this repository as `suic_rates.dat`.
 With luck someone else will find the table useful; it's a simple, tab-delimited, plain-text table of suicide rates broken down by country, year, sex, and each of a standard set of age bands (ages 1&ndash;4, ages 5&ndash;9, ages 10&ndash;14, and so on up to age 75+).
-The table also has the population counts used as divisors to produce the rates, handy for e.g. setting aside tiny countries where the rates might be suspiciously volatile.
+The table also has the population counts used as divisors to produce the rates, handy for e.g. detecting and setting aside tiny countries where the rates might be suspiciously volatile.
 
 A quick explanation of `suic_rates.dat`'s columns:
 
@@ -34,7 +36,7 @@ A quick explanation of `suic_rates.dat`'s columns:
 * `Deaths1`: total count of suicides across all ages for this country-year-sex combination.
 * `D0104` through `D75UP`: count of suicides in each age band for the country-year-sex combination. The first 2 digits represent the lowest age the band includes, the last 2 digits the highest. `D0000` is omitted because I always assume zero suicides at age 0.
 * `Pop1`: total population across all ages in this country-year-sex combination.
-* `P0000` through `P75UP`: population in each age band in the country-year-sex combination. Numbering scheme is the same as for `D0104` and the like.
+* `P0000` through `P75UP`: population in each age band in the country-year-sex combination. Numbering scheme is the same as for `D0104` and the like, with `P0000` the age-zero population.
 * `ASSR0104` through `ASSR75UP`: age-specific suicide rates, i.e. suicides per 100,000 people in the given country-year-sex-age band. Again, I assume zero suicides at age 0.
 * `AASR`: age-adjusted suicide rate, i.e. suicides per 100,000 people in the given country-year-sex combination, reweighting the age-specific suicide rates so the overall age distribution matches a reference population (currently the Netherlands in the given year).
 * `SAAASR`: sex-adjusted, age-adjusted suicide rate, i.e. suicides per 100,000 people in the given country-year combination, reweighting the AASRs by sex to match a reference population's sex distribution (again that of the Netherlands in the given year).
@@ -58,9 +60,9 @@ I think my table of suicide rates is about as good as the WHO source data, but t
 
 * Annoyingly many countries have suspicious kinks in their WHO population time series (and I've a hunch that those kinks often appear suspiciously close to the time of a census).
 * The suicide counts themselves are affected by how reliable countries are in reporting suicides; some countries are surely better than others at recording suicides as suicides.
-* I can also be nearly certain that I'm undercounting the suicides represented in the WHO's raw tables which use the ICD-10 taxonomy of causes of death. The main ICD-10 codes for suicide are "X60" through "X84", representing [assorted forms of "Intentional self-harm"](http://apps.who.int/classifications/apps/icd/icd10online2003/fr-icd.htm?gx60.htm+). But the ICD-10 also has the code "Y87.0", for "Sequelae of intentional self harm", and though it sees occasional use in the WHO tables, I set these deaths aside, because I see no corresponding code in the ICD-9 tables. Including the ICD-10 "Y87.0" deaths would therefore produce artifactual jumps in my suicide counts, because the ICD-9 has no counterpart code, so the older data in my time series (based on the ICD-9 taxonomy) would be spuriously lower (because of a lack of "Y87.0" deaths) than the later data (because they'd include the ICD-10 "Y87.0" deaths).
+* I can also be nearly certain that I'm undercounting the suicides represented in the WHO's raw tables which use the ICD-10 taxonomy of causes of death. The main ICD-10 codes for suicide are "X60" through "X84", representing [assorted forms of "Intentional self-harm"](http://apps.who.int/classifications/apps/icd/icd10online2003/fr-icd.htm?gx60.htm+). But the ICD-10 also has the code "Y87.0", for "Sequelae of intentional self harm", and though it sees occasional use in the WHO tables, I set these deaths aside, because I see no corresponding code in the ICD-9 tables. Including the ICD-10 "Y87.0" deaths would therefore produce artifactual jumps in my suicide counts, because the ICD-9 has no counterpart code, so the older data in my time series (based on the ICD-9 taxonomy) would be spuriously lower (because of a lack of "Y87.0" deaths) than the later data (which'd include the ICD-10 "Y87.0" deaths).
 * It's also a commonplace among scholars who study this kind of thing that a lot of suicides fly under the radar and are logged as deaths of uncertain cause. I don't see an easy way to account for that.
 
-It's not all the WHO's fault.
-Regarding the suicide counts, they can mostly only work with what they're given by national statistical agencies.
+It's not all the WHO's fault, by any means.
+In the main the WHO has to rely on what national statistical agencies give it.
 When those agencies drop the ball, as in Poland in 1997 &amp; 1998 and Mauritius in 2009, there's not much the WHO can do.
